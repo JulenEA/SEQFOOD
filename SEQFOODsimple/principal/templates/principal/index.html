@@ -1,0 +1,55 @@
+{% extends "principal/plantilla.html" %}
+
+{% block contenido %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+
+
+
+      //Grafico de tarta
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart1);
+      function drawChart1() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Alimento');
+        data.addColumn('number', 'Cantidad');
+        data.addRows([
+          {% for elemento in categorias %}
+          ["{{ elemento.categoria }}", {{ elemento.cuenta }}],
+          {% endfor %}
+        ]);
+
+        var options={
+          legend:{position:'top', alignment:'center'},
+          is3D:true,
+
+        };
+
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('canvasDiv'));
+        chart.draw(data, options);
+      }
+
+      $(window).resize(function(){
+      		drawChart1();
+      		//drawChart2();
+      });
+
+
+    </script>
+
+<div class="text-center">
+<h1>Página principal de la aplicación</h1>
+<p>En este momento hay un total de <strong>{{ num_alimentos }}</strong> alimentos registrados.</p>
+</div>
+
+<div class="row">
+<div class="">
+<div id="canvasDiv" class="chart"></div>
+</div>
+
+{% endblock %}

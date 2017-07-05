@@ -1,0 +1,50 @@
+.chart{min-height: 450px; padding:0;}
+
+
+.marg05{margin-left: 5%;}
+.marg10{margin-left: 10%;}
+.marg15{margin-left: 15%;}
+.marg20{margin-left: 20%;}
+.marg30{margin-left: 30%;}
+
+
+
+.margR05{margin-right: 5em}
+
+.solidb{border:solid;}
+
+.menus{display: block;padding:0em 1em 0em 1em;}
+
+
+
+a:hover{text-decoration:none; color:black;}
+a{color:green;}
+
+.margT07{margin-top:6em;}
+/**{border:solid;}*/
+
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.marg05{margin-left: 0%;}
+.marg10{margin-left: 0%;}
+.marg15{margin-left: 0%;}
+.marg20{margin-left: 0%;}
+.marg30{margin-left: 0%;}
+
+}
+@media (min-width: 480px) {
+	.marg05{margin-left: 5%;}
+	.marg07{margin-left: 6em;}
+	.marg10{margin-left: 6.75%;}
+	.marg15{margin-left: 15%;}
+	.marg20{margin-left: 20%;}
+	.marg30{margin-left: 30%;}
+
+	.margT01{
+		position:relative;
+		top:50%;
+		transform: translate(0%);
+		margin-top: 1.125em;
+		}
+}

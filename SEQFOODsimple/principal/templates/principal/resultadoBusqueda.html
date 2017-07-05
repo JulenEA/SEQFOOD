@@ -1,0 +1,29 @@
+{% extends "principal/plantilla.html" %}
+
+
+
+{% block title %}Resultados búsqueda{% endblock %}
+{% block contenido %}
+
+<h2>Resultados de la búsqueda:</h2>
+
+{% if resultado %}
+	<div class="list-group"> 
+	{% for r in resultado %}
+		<a class="list-group-item" href="{% url 'detalle_alimento' pk=r.c2dna %}"><h4 class="list-group-item-heading">{{ r.nombre }}</h4>
+		<p class="list-group-item-text">Código 2DNA: <strong>{{ r.c2dna }}</strong></p>
+		</a>
+
+
+	{% endfor %}
+	</div>
+{% else %}
+	<p>No se ha encontrado ningún resultado.</p>
+{% endif %}
+
+
+
+
+
+
+{% endblock %}
